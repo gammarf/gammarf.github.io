@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Protocol &#8212; GammaRF 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contact" href="contact.html" />
+    <link rel="prev" title="Client" href="client.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><img class="rightlogo" src="_static/grflogo.png" alt="Logo"/><h1 class="heading"><a href="index.html">
+          <span>GammaRF 1.0.0 documentation</span></a></h1>
+        <h2 class="heading"><span>Protocol</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="client.html">Client</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="contact.html">Contact</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="protocol">
+<h1>Protocol<a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="client-server">
+<h2>Client / Server<a class="headerlink" href="#client-server" title="Permalink to this headline">¶</a></h2>
+<p>While there is an &#8220;official&#8221; client, in reality data can be sent to the server
+by whatever mechanism you wish, as long as it adheres to the protocol below.
+Each module sends its data as JSON, through a TCP socket.</p>
+<p><strong>scanner</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+    &quot;lat&quot;: float,
+    &quot;lng&quot;: float,
+    &quot;freq&quot;: int,
+    &quot;pwr&quot;: float,
+    &quot;rand&quot;: str,
+    &quot;protocol&quot;: 1,
+    &quot;stationid&quot;: str,
+    &quot;module&quot;: 1,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+<p><strong>freqwatch</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+    &quot;lat&quot;: float,
+    &quot;lng&quot;: float,
+    &quot;freq&quot;: int,
+    &quot;pwr&quot;: float,
+    &quot;rand&quot;: str,
+    &quot;ts&quot;: str,
+    &quot;protocol&quot;: 1,
+    &quot;stationid&quot;: str,
+    &quot;module&quot;: 6,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+<p><strong>p25rx</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+    &quot;talkgroup&quot;: str,
+    &quot;lat&quot;: float,
+    &quot;lng&quot;: float,
+    &quot;rand&quot;: str,
+    &quot;protocol&quot;: 1,
+    &quot;stationid&quot;: str,
+    &quot;module&quot;: 4,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+<p><strong>snapshot</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+    &quot;lat&quot;: float,
+    &quot;lng&quot;: float,
+    &quot;snapshotid&quot;: str,
+    &quot;rawdata&quot;: str,
+    &quot;type&quot;: str,
+    &quot;rand&quot;: str,
+    &quot;protocol&quot;: 1,
+    &quot;stationid&quot;: str,
+    &quot;module&quot;: 5,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+<p><strong>spectrum</strong></p>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+    &quot;lat&quot;: float,
+    &quot;lng&quot;: float,
+    &quot;freq&quot;: int,
+    &quot;mean&quot;: str,
+    &quot;stdev&quot;: str,
+    &quot;range&quot;: str,
+    &quot;protocol&quot;: 1,
+    &quot;stationid&quot;: str,
+    &quot;module&quot;: 2,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="utility-api">
+<h2>Utility API<a class="headerlink" href="#utility-api" title="Permalink to this headline">¶</a></h2>
+<p><strong>locations</strong></p>
+<p>URL: <a class="reference external" href="http://[server]:[port]/util/locations">http://[server]:[port]/util/locations</a></p>
+<p>Returns a list of logged in stations, with a list of modules each is running</p>
+<p><strong>loggedin</strong></p>
+<p>URL: <a class="reference external" href="http://[server]:[port]/util/loggedin/[stationid">http://[server]:[port]/util/loggedin/[stationid</a>]</p>
+<p>Returns &#8216;true&#8217; or &#8216;false&#8217;, depending on whether [stationid] is logged in</p>
+<p><strong>refxmtrs</strong></p>
+<p>URL: <a class="reference external" href="http://[server]:[port]/util/refxmtrs">http://[server]:[port]/util/refxmtrs</a></p>
+<p>Returns a list of reference transmitters for the cluster, with a list for each
+that includes callsign, location, power, and frequency.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="client.html">Client</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="contact.html">Contact</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, GammaRF.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
+    </div>
+  </body>
+</html>

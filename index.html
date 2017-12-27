@@ -1,1 +1,148 @@
-test
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Distributed Radio Signal Collection and Analysis &#8212; GammaRF 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Client" href="client.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><img class="rightlogo" src="_static/grflogo.png" alt="Logo"/><h1 class="heading"><a href="#">
+          <span>GammaRF 1.0.0 documentation</span></a></h1>
+        <h2 class="heading"><span>Distributed Radio Signal Collection and Analysis</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        <a class="uplink" href="#">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="client.html">Client</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="distributed-radio-signal-collection-and-analysis">
+<h1>Distributed Radio Signal Collection and Analysis<a class="headerlink" href="#distributed-radio-signal-collection-and-analysis" title="Permalink to this headline">¶</a></h1>
+<p>ΓRF is a radio signal collection, storage, and analysis system based on
+inexpensive distributed nodes and a central server.</p>
+<p>Nodes run modules which provide various types of functionality,
+such as monitoring specific frequencies, watching for activity on frequencies,
+and monitoring aircraft in the area through their ADS-B traffic.  Nodes are
+based on inexpensive hardware (such as the HackRF, Intel NUC, and RTL-SDR),
+so the system is accessible to both professional and hobby users.</p>
+<p>Data collected by nodes is stored on a server and combined into coherent
+products.  These products are accessible through a web interface, in visually
+appealing, easy-to-use form.</p>
+</div>
+<div class="section" id="applications">
+<h1>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h1>
+<p>Some examples of what has been implemented, or may be easily implemented,
+using the system include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>tracking satellites and other space objects</li>
+<li>estimating the location of transmitters using TDOA</li>
+<li>building direction finding networks (e.g. for fox hunts)</li>
+<li>channel location and identification</li>
+<li>creating timelines of activity on a radio channel</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="client">
+<h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
+<p>There is an open-source client available <a class="reference external" href="https://github.com/gammarf/gammarf">here</a>.
+We cover installation and usage of this client later in this documentation.</p>
+<div class="figure" id="id1">
+<a class="reference internal image-reference" href="_images/client.png"><img alt="_images/client.png" src="_images/client.png" style="width: 870.8px; height: 932.4px;" /></a>
+<p class="caption"><span class="caption-text">ΓRF client software</span></p>
+</div>
+</div>
+<div class="section" id="server">
+<h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
+<p>The server is composed of both open-source and proprietary software.</p>
+<div class="figure" id="id2">
+<a class="reference internal image-reference" href="_images/activity3.png"><img alt="_images/activity3.png" src="_images/activity3.png" style="width: 1008.0px; height: 196.0px;" /></a>
+<p class="caption"><span class="caption-text">Ham radio repeater activity.  Dense clusters of dots are conversations.  Graphed with <a class="reference external" href="https://grafana.com/">Grafana</a>.</span></p>
+</div>
+<div class="figure" id="id3">
+<a class="reference internal image-reference" href="_images/activity1.png"><img alt="_images/activity1.png" src="_images/activity1.png" style="width: 1008.0px; height: 178.5px;" /></a>
+<p class="caption"><span class="caption-text">Signal strength at a frequency, graphed over time.</span></p>
+</div>
+<div class="figure" id="id4">
+<a class="reference internal image-reference" href="_images/server_map.png"><img alt="_images/server_map.png" src="_images/server_map.png" style="width: 1279.5px; height: 603.0px;" /></a>
+<p class="caption"><span class="caption-text">A cluster of nodes are mapped, along with cluster reference transmitters.</span></p>
+</div>
+<div class="figure" id="id5">
+<a class="reference internal image-reference" href="_images/server_interesting.png"><img alt="_images/server_interesting.png" src="_images/server_interesting.png" style="width: 988.5px; height: 312.0px;" /></a>
+<p class="caption"><span class="caption-text">Each node has its own set of &#8216;interesting frequencies&#8217; it can monitor.</span></p>
+</div>
+<div class="figure" id="id6">
+<a class="reference internal image-reference" href="_images/server_snapshot.png"><img alt="_images/server_snapshot.png" src="_images/server_snapshot.png" style="width: 937.5px; height: 309.0px;" /></a>
+<p class="caption"><span class="caption-text">The &#8216;snapshot&#8217; client module takes a picture of a swath of spectrum and sends it to the server.</span></p>
+</div>
+</div>
+<div class="section" id="rf-documentation">
+<h1>ΓRF documentation<a class="headerlink" href="#rf-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#misc-considerations">Misc. Considerations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="protocol.html">Protocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html#client-server">Client / Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html#utility-api">Utility API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        <a class="uplink" href="#">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="client.html">Client</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, GammaRF.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
+    </div>
+  </body>
+</html>

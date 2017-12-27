@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Consumers &mdash; GammaRF 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
+    <link rel="top" title="GammaRF 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Projects" href="projects.html" />
+    <link rel="prev" title="Protocol" href="protocol.html" /> 
+  </head>
+  <body>
+      <div class="header"><img class="rightlogo" src="_static/grflogo.png" alt="Logo"/><h1 class="heading"><a href="index.html">
+          <span>GammaRF 1.0.0 documentation</span></a></h1>
+        <h2 class="heading"><span>Consumers</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="protocol.html">Protocol</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="projects.html">Projects</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="consumers">
+<h1>Consumers<a class="headerlink" href="#consumers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="kcrf-dashboards">
+<h2>KCΓRF Dashboards<a class="headerlink" href="#kcrf-dashboards" title="Permalink to this headline">¶</a></h2>
+<p>Data from nodes can be visualized in different ways, aside from the webtools.
+For an example, see the <a class="reference external" href="http://gammarf.io:3000/dashboard/db/autizmo">KCGRF Grafana dashboards</a>.</p>
+<div class="figure">
+<img alt="_images/hunt_client.png" src="_images/hunt_client.png" />
+<p class="caption">After running freqwatch on the client...</p>
+</div>
+<div class="figure">
+<img alt="_images/hunt_timelion.png" src="_images/hunt_timelion.png" />
+<p class="caption">... one can monitor the power on Kibana.</p>
+</div>
+</div>
+<div class="section" id="web-tools">
+<h2>Web Tools<a class="headerlink" href="#web-tools" title="Permalink to this headline">¶</a></h2>
+<p>To access the web tools, navigate to <tt class="docutils literal"><span class="pre">http://[server]:8080</span></tt>.  For a
+demo, see the <a class="reference external" href="http://gammarf.io:8080">Kansas City cluster tools</a>.</p>
+<p><strong>The times shown in the web tools are in UTC</strong></p>
+<div class="section" id="snapshots">
+<h3>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">¶</a></h3>
+<p>Snapshots sent to the server by the ΓRF client can be viewed on this page.</p>
+<div class="figure">
+<img alt="_images/snapshot.png" src="_images/snapshot.png" />
+<p class="caption">A snapshot of the FM broadcast band in Kansas City</p>
+</div>
+<p>Smaller snapshots yield better performing graphs.  Plotly documentation and
+personal experience indicate that the browser used to view the graphs has
+a significant impact on responsiveness.  Chrome seems to perform much better
+with dense Plotly graphs than Firefox.</p>
+</div>
+<div class="section" id="channels">
+<h3>Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h3>
+<p>There are two channels tools: Channel List, and Channel Maps.  Periodically
+(by default, 0000 UTC daily) the time series&#8217; for frequencies are analyzed
+to find <em>channels</em>.  Frequencies that are adjacent and that share a certain
+amount of activity (hit) similarity are considered part of the same channel.</p>
+<p>The Channel Map is a graphic representation of discovered channels.  Its
+purpose is to give the user some high-level idea of where activity is occuring
+in the RF spectrum.  Zoom in to the graphic to view channels more closely.
+Dots on the graph that are adjacent and the same color are part of the same
+channel.</p>
+<div class="figure">
+<img alt="_images/chanmap.png" src="_images/chanmap.png" />
+<p class="caption">A channel map</p>
+</div>
+<p>The Channel List is simply a list of channels identified, with some
+information about each channel.  This information includes average power
+at the center frequency, the estimated width of the channel, and an
+<em>activity signature</em> for the channel.  The acitivity signature consists
+of four numbers: three coefficients to a quadratic equation that matches
+the channel&#8217;s traffic density plot, and a density number.  The channel
+signature is derived from the activity of the channel over the previous
+24 hours.  Future releases will use this signature information to help
+identify potentially related channels.</p>
+<p>By clicking a channel frequency in the Channel List, one can view a hit
+history of the channel, and channel information.  The channel&#8217;s traffic
+density plot is shown below these.</p>
+<div class="figure">
+<img alt="_images/channel_info.png" src="_images/channel_info.png" />
+<p class="caption">Channel information page</p>
+</div>
+<p>Since the task to identify channels runs daily, the number of entries in
+the <em>channels</em> PostgreSQL table can increase quickly.  For this reason
+another periodic task is run that delete channels of a certain age from
+this table.  By default, channels are held for three days.</p>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="protocol.html">Protocol</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="projects.html">Projects</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2017, GammaRF.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

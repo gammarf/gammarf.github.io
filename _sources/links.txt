@@ -1,0 +1,9 @@
+Links
+*****
+`Here is the Patreon (help the project grow!!) <http://patreon.com/gammarf>`_
+
+`Here are the dashboards for the Kansas City server <http://gammarf.io:3000/dashboard/db/autizmo>`_
+
+`Here is the client source <https://github.com/covertcodes/gammarf/>`_
+
+`SOFWERX (A ΓRF sponsor) <http://sofwerx.org>`_
