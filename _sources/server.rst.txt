@@ -1,13 +1,43 @@
 Server
 ******
 
+Server source is not (yet) open.  This section covers basic server structure and usage from a consumer standpoint.
 
 
-say that stationids are unique per server, not cluster (people can msg etc others in other clusters but on the same server), how to add users and that only the server admin can do it. by default clusters only see their own members in the menu and on the map. Show screenshots, talk about the demo login account. Also list demo login account on the main page so people can log in
+Organization
+============
+
+A server may host many *clusters*.  Clusters are groupings of stations.  There may be a different cluster per city, for example.
+
+Clusters are composed of *stations*.  A station is identified by a *stationid* which is unique to both the cluster and the server.
+Because a stationid is unique to the server (not just the cluster), users in different clusters can message each other, and request
+remotetasks from one another, across cluster boundaries.
+
+A server has an administrator that can add, delete, and edit clusters, stations, and other information for stations that utilize
+that server.
 
 
-update docs to include using the server, link to server, say every org has its own copy, show demo account (kcgrf)
+Web Interface
+=============
+
+Server (web) accounts are not linked to station accounts.  While it may be convenient to have your stationid and your web login
+and password the same, it is not strictly necessary.  This makes sense when you consider that a single user may host multiple
+stations.
+
+When you log in to the server, you will see a map with the cluster you belong to centered.  On this map you will see markers for
+stations in your cluster, and your cluster's reference transmitters.  Icons for stations will vary in color depending on their
+status (offline, online using static coordinates, online using GPS).
+
+[ image here]
+
+
+menu
+[image here]
+
+functions
+[images here]
 
 
 
-grfdemo pass grfdemo
+demo account (put on the top) grfdemo pass grfdemo
+link to server
