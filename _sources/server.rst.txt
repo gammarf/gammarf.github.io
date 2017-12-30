@@ -23,7 +23,7 @@ Web Interface
 =============
 
 Server (web) accounts are not linked to station accounts.  While it may be convenient to have your stationid and your web login
-and password the same, it is not strictly necessary.  This makes sense when you consider that a single user may host multiple
+and password the same, it's not strictly necessary.  This makes sense when you consider that a single user may host multiple
 stations.
 
 When you log in to the server, you will see a map with the cluster you belong to centered.  On this map you will see markers for
@@ -35,6 +35,3 @@ status (offline, online using static coordinates, online using GPS).
 
 A menu on the left provides access to the different functions.  For now these include 'snapshot', 'interesting', and 'dashboards'.
 The later are based on Grafana.
-
-demo account (put on the top) grfdemo pass grfdemo
-link to server
