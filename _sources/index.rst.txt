@@ -49,7 +49,7 @@ The server is composed of both open-source and proprietary software.
     Signal strength at a frequency, graphed over time.
 
 .. figure:: _static/images/servermap.png
-    :scale: 50 %
+    :scale: 100 %
 
     A cluster of nodes are mapped, along with cluster reference transmitters.
 

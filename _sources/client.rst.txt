@@ -182,7 +182,7 @@ start with a ``#`` are ignored.  Tab completion is available.
 
     * ``stations``: Show stations associated with the cluster
 
-    * ``tdoa``: (TODO) Request stations to cooperate in a TDOA measurement
+    * ``tdoa``: Request stations to cooperate in a TDOA measurement
 
 Modules
 =======
@@ -213,7 +213,8 @@ command for usage instructions.
     * ``snapshot``: Take a picture of a swath of the RF spectrum and send it to
       the server.
 
-    * ``tdoa``: (TODO)
+    * ``tdoa``: Work with other stations to try and locate a transmitter.  Accuracy
+      depends on the location of the stations with respect to the transmitter
 
 
 Misc. Considerations
