@@ -1,0 +1,13 @@
+Server
+******
+
+
+
+say that stationids are unique per server, not cluster (people can msg etc others in other clusters but on the same server), how to add users and that only the server admin can do it. by default clusters only see their own members in the menu and on the map. Show screenshots, talk about the demo login account. Also list demo login account on the main page so people can log in
+
+
+update docs to include using the server, link to server, say every org has its own copy, show demo account (kcgrf)
+
+
+
+grfdemo pass grfdemo
