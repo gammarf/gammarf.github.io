@@ -66,7 +66,7 @@
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example configuration file:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">modules</span><span class="p">]</span>
-<span class="n">modules</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">,</span> <span class="n">adsb</span><span class="p">,</span> <span class="n">freqwatch</span><span class="p">,</span> <span class="n">remotetask</span><span class="p">,</span> <span class="n">p25rx</span><span class="p">,</span> <span class="n">snapshot</span><span class="p">,</span> <span class="n">tdoa</span>
+<span class="n">modules</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">,</span> <span class="n">adsb</span><span class="p">,</span> <span class="n">freqwatch</span><span class="p">,</span> <span class="n">remotetask</span><span class="p">,</span> <span class="n">p25rx</span><span class="p">,</span> <span class="n">snapshot</span><span class="p">,</span> <span class="n">tdoa</span><span class="p">,</span> <span class="n">tpms</span>
 
 <span class="p">[</span><span class="n">connector</span><span class="p">]</span>
 <span class="n">station_id</span> <span class="o">=</span> <span class="n">demo</span>
@@ -254,8 +254,7 @@ careful adjusting this module&#8217;s <code class="docutils literal"><span class
 will trigger false hits.  Particularly noisy frequencies may do that, anyway.</li>
 <li><code class="docutils literal"><span class="pre">snapshot</span></code>: Take a picture of a swath of the RF spectrum and send it to
 the server.</li>
-<li><code class="docutils literal"><span class="pre">tdoa</span></code>: Work with other stations to try and locate a transmitter.  Accuracy
-depends on the location of the stations with respect to the transmitter</li>
+<li><code class="docutils literal"><span class="pre">tpms</span></code>: Send Tire Pressure Monitoring System (TPMS) information</li>
 </ul>
 </div></blockquote>
 </div>

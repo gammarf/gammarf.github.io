@@ -27,7 +27,7 @@ Configuration
 Below is an example configuration file::
 
     [modules]
-    modules = scanner, adsb, freqwatch, remotetask, p25rx, snapshot, tdoa
+    modules = scanner, adsb, freqwatch, remotetask, p25rx, snapshot, tdoa, tpms
 
     [connector]
     station_id = demo
@@ -215,8 +215,7 @@ command for usage instructions.
     * ``snapshot``: Take a picture of a swath of the RF spectrum and send it to
       the server.
 
-    * ``tdoa``: Work with other stations to try and locate a transmitter.  Accuracy
-      depends on the location of the stations with respect to the transmitter
+    * ``tpms``: Send Tire Pressure Monitoring System (TPMS) information 
 
 
 Misc. Considerations
@@ -255,7 +254,7 @@ the system firewall.
 
 Hardware
 --------
-Various RTL-SDR vendora exist, and accessories (antennas, amplifiers, filters)
+Various RTL-SDR vendors exist, and accessories (antennas, amplifiers, filters)
 are plentiful.  Here are some tips for picking the right stuff.
 
 * The metal-cased RTL-USB sticks work pretty well.  Look for something with
