@@ -1,63 +1,40 @@
 Server
 ******
 
-The client sends its data to the server as JSON objects, on ports defined in the
-source.  The default is TCP port 8091 for the command (signalling) channel, and
-TCP port 8090 for everything else.
+Server source is not (yet) open.  This section covers basic server structure and usage from a consumer standpoint.
 
-Structure and Installation
-==========================
-When setting up a server, it's best to set its time zone to UTC.  The server may
-accept data from clients in different time-zones, and having it set to UTC can
-resolve confusion.
+You can log into the demo server (https://gammarf.io:8080); user and pass are 'grfdemo'.
 
-The server runs in a Docker container.  It relies on some external services.
-With the exception of PostgreSQL, these external services must be running on the
-same server as ΓRF (localhost).  These services can be deployed with Docker as
-well, if you'd like.
 
-You can adjust parameters relating to the support services by editing the
-``setupfiles/grf_config.json`` file.  InfluxDB is assumed to be listening only
-on the loopback interface!  ΓRF interacts with these without authentication.
+Organization
+============
 
-The PostgreSQL database server is used to hold administrative information,
-including stations the node will accept data from, a list of 'interesting'
-frequencies, and P25 talkgroups for each node.  If you'd like a set of users to
-be able to send data to the server off the bat, edit the
-``dbfiles/grf_initial_users.sql`` file in the server source tree before
-building the Docker image.  Users you specify here will exist from the
-beginning.
+A server may host many *clusters*.  Clusters are groupings of stations.  There may be a different cluster per city, for example.
 
-Changes made to the administrative tables will be picked up by the server
-modules periodically (the default refresh time is one minute).
+Clusters are composed of *stations*.  A station is identified by a *stationid* which is unique to both the cluster and the server.
+Because a stationid is unique to the server (not just the cluster), users in different clusters can message each other, and request
+remotetasks from one another, across cluster boundaries.
 
-ΓRF will install the PostgreSQL tables the first time it is run.  It depends
-on a ``gammarf`` database existing, and on the user specified in the
-configuration file having full permissions on that database.  Running this
-in PostgreSQL can make this happen:
+A server has an administrator that can add, delete, and edit clusters, stations, and other information for stations that utilize
+that server.
 
-``CREATE DATABASE gammarf; GRANT ALL PRIVILEGES ON DATABASE gammarf TO gammarf;``
 
-InfluxDB is used to hold relatively short-term time series information.  The
-default retention time is one week.  The retention time can be changed in
-the ``setupfiles/grf_config.json`` file (this must be done before running the
-container for the first time.)  Be careful with this - increasing the retention
-time puts additional strain on the server.
+Web Interface
+=============
 
-Redis needs to be running and listening on the loopback interface.
+Server (web) accounts are not linked to station accounts.  While it may be convenient to have your stationid and your web login
+and password the same, it's not strictly necessary.  This makes sense when you consider that a single user may host multiple
+stations.
 
-Once you have the external services referenced above running, build the
-container by typing ``docker build .`` in the top level of the source tree.
-Edit the ``grf_server.sh`` script in the server source tree to include the
-image ID output by the build command, then run that script.  You'll be in
-the Docker container, and ΓRF server should be running.
+When you log in to the server, you will see a map with the cluster you belong to centered.  On this map you will see markers for
+stations in your cluster, and your cluster's reference transmitters.  Icons for stations will vary in color depending on their
+status (offline, online using static coordinates, online using GPS).
 
-Django is running on the ΓRF server, on port 8080.  You can access the
-admin interface by logging in at ``http://[server]:8080/admin/`` and using
-the credentials you entered when prompted, the first time you ran the
-Docker container.  From the admin page you can add, delete, and modify rows
-in the PostreSQL administration tables.  One of the first things you may
-want to do after running the server container is logging in to the admin
-interface and adding an initial station.  You can also add "interesting"
-frequencies for your stations here.  These are frequencies that stations
-will report ``scanner`` module hits on.
+.. image:: _static/images/servermap.png
+    :scale: 100 %
+
+A menu on the left provides access to the different functions.  For now these include 'snapshot', 'interesting', and 'dashboards'.
+The later are based on Grafana.
+
+Triggers and Alerts
+===================

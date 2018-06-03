@@ -18,6 +18,8 @@ Installation
 
 4. If you're using HackRF, flash the rom with the newest firmware version.  This is a must!
 
+5. Make sure all clients are running time synchronization services (ntpd, timesyncd)!
+
 
 Configuration
 =============
@@ -25,7 +27,7 @@ Configuration
 Below is an example configuration file::
 
     [modules]
-    modules = scanner, adsb, freqwatch, remotetask, p25rx, snapshot, tdoa
+    modules = scanner, adsb, freqwatch, remotetask, p25rx, snapshot, tdoa, ism433, single
 
     [connector]
     station_id = demo
@@ -182,7 +184,7 @@ start with a ``#`` are ignored.  Tab completion is available.
 
     * ``stations``: Show stations associated with the cluster
 
-    * ``tdoa``: (TODO) Request stations to cooperate in a TDOA measurement
+    * ``tdoa``: Request stations to cooperate in a TDOA measurement
 
 Modules
 =======
@@ -210,10 +212,13 @@ command for usage instructions.
       careful adjusting this module's ``hit_db`` parameter.  If it's too low, noise
       will trigger false hits.  Particularly noisy frequencies may do that, anyway.
 
+    * ``single``: Monitor a single frequency for power above a specified threshold
+
     * ``snapshot``: Take a picture of a swath of the RF spectrum and send it to
       the server.
 
-    * ``tdoa``: (TODO)
+    * ``ism433``: Collect and send ISM433 (such as Tire Pressure Monitoring System
+      (TPMS) information)
 
 
 Misc. Considerations
@@ -252,7 +257,7 @@ the system firewall.
 
 Hardware
 --------
-Various RTL-SDR vendora exist, and accessories (antennas, amplifiers, filters)
+Various RTL-SDR vendors exist, and accessories (antennas, amplifiers, filters)
 are plentiful.  Here are some tips for picking the right stuff.
 
 * The metal-cased RTL-USB sticks work pretty well.  Look for something with

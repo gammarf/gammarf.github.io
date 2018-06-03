@@ -1,42 +1,28 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Client &mdash; ΓRF  documentation</title>
-    
+    <title>Client &#8212; ΓRF  documentation</title>
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/print.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/theme_extras.js"></script>
-    <link rel="top" title="ΓRF  documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Server" href="server.html" />
     <link rel="prev" title="Distributed Radio Signal Collection and Analysis" href="index.html" /> 
-  </head>
-  <body>
-      <div class="header"><img class="rightlogo" src="_static/grflogo.png" alt="Logo"/><h1 class="heading"><a href="index.html">
+  </head><body>
+      <div class="header" role="banner"><img class="rightlogo" src="_static/grflogo.png" alt="Logo"/><h1 class="heading"><a href="index.html">
           <span>ΓRF  documentation</span></a></h1>
         <h2 class="heading"><span>Client</span></h2>
       </div>
-      <div class="topnav">
+      <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
         «&#160;&#160;<a href="index.html">Distributed Radio Signal Collection and Analysis</a>
@@ -57,93 +43,94 @@
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/gammarf/gammarf</span></tt></li>
-<li>Adjust gammarf.conf.  Get <tt class="docutils literal"><span class="pre">station_id</span></tt> and <tt class="docutils literal"><span class="pre">station_pass</span></tt> from your server administrator</li>
-<li><tt class="docutils literal"><span class="pre">./prepare;</span> <span class="pre">./run.sh</span></tt> (assumes you have Docker installed)</li>
-<li>If you&#8217;re using HackRF, flash the rom with the newest firmware version.  This is a must!</li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/gammarf/gammarf</span></code></li>
+<li>Adjust gammarf.conf.  Get <code class="docutils literal notranslate"><span class="pre">station_id</span></code> and <code class="docutils literal notranslate"><span class="pre">station_pass</span></code> from your server administrator</li>
+<li><code class="docutils literal notranslate"><span class="pre">./prepare;</span> <span class="pre">./run.sh</span></code> (assumes you have Docker installed)</li>
+<li>If you’re using HackRF, flash the rom with the newest firmware version.  This is a must!</li>
 <li>Make sure all clients are running time synchronization services (ntpd, timesyncd)!</li>
 </ol>
 </div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>Below is an example configuration file:</p>
-<div class="highlight-python"><pre>[modules]
-modules = scanner, adsb, freqwatch, remotetask, p25rx, snapshot, tdoa, ism433, single
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">modules</span><span class="p">]</span>
+<span class="n">modules</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">,</span> <span class="n">adsb</span><span class="p">,</span> <span class="n">freqwatch</span><span class="p">,</span> <span class="n">remotetask</span><span class="p">,</span> <span class="n">p25rx</span><span class="p">,</span> <span class="n">snapshot</span><span class="p">,</span> <span class="n">tdoa</span><span class="p">,</span> <span class="n">ism433</span><span class="p">,</span> <span class="n">single</span>
 
-[connector]
-station_id = demo
-station_pass = demo1234
-server_host = gammarf.io
-data_port = 9090
-cmd_port = 9091
-server_web_proto = http
-server_web_port = 8080
+<span class="p">[</span><span class="n">connector</span><span class="p">]</span>
+<span class="n">station_id</span> <span class="o">=</span> <span class="n">demo</span>
+<span class="n">station_pass</span> <span class="o">=</span> <span class="n">demo1234</span>
+<span class="n">server_host</span> <span class="o">=</span> <span class="n">gammarf</span><span class="o">.</span><span class="n">io</span>
+<span class="n">data_port</span> <span class="o">=</span> <span class="mi">9090</span>
+<span class="n">cmd_port</span> <span class="o">=</span> <span class="mi">9091</span>
+<span class="n">server_web_proto</span> <span class="o">=</span> <span class="n">http</span>
+<span class="n">server_web_port</span> <span class="o">=</span> <span class="mi">8080</span>
 
-[startup]
-startup_1010 = adsb
-startup_9000 = p25rx 50000
-startup_virtual = scanner, freqwatch
+<span class="p">[</span><span class="n">startup</span><span class="p">]</span>
+<span class="n">startup_1010</span> <span class="o">=</span> <span class="n">adsb</span>
+<span class="n">startup_9000</span> <span class="o">=</span> <span class="n">p25rx</span> <span class="mi">50000</span>
+<span class="n">startup_virtual</span> <span class="o">=</span> <span class="n">scanner</span><span class="p">,</span> <span class="n">freqwatch</span>
 
-[location]
-usegps = 0
-lat = 39.04
-lng = -94.6
+<span class="p">[</span><span class="n">location</span><span class="p">]</span>
+<span class="n">usegps</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lat</span> <span class="o">=</span> <span class="mf">39.04</span>
+<span class="n">lng</span> <span class="o">=</span> <span class="o">-</span><span class="mf">94.6</span>
 
-[scanner]
-# squelch (above avg.) for interesting freqs, must be float
-hit_db = 15.0
+<span class="p">[</span><span class="n">scanner</span><span class="p">]</span>
+<span class="c1"># squelch (above avg.) for interesting freqs, must be float</span>
+<span class="n">hit_db</span> <span class="o">=</span> <span class="mf">15.0</span>
 
-[rtldevs]
-rtl_path = /usr/local/bin
+<span class="p">[</span><span class="n">rtldevs</span><span class="p">]</span>
+<span class="n">rtl_path</span> <span class="o">=</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span>
 
-gain_1000 = 23
-ppm_1000 = 0
-offset_1000 = 0
-range_1000 = 30 1600
+<span class="n">gain_1000</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">ppm_1000</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">offset_1000</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">range_1000</span> <span class="o">=</span> <span class="mi">30</span> <span class="mi">1600</span>
 
-#gain_1001 = 23
-ppm_1001 = 0
-offset_1001 = 0
-range_1001 = 30 1600
+<span class="c1">#gain_1001 = 23</span>
+<span class="n">ppm_1001</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">offset_1001</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">range_1001</span> <span class="o">=</span> <span class="mi">30</span> <span class="mi">1600</span>
 
-gain_1007 = 23
-ppm_1007 = 0
-offset_1007 = 0
-range_1007 = 30 1600
+<span class="n">gain_1007</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">ppm_1007</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">offset_1007</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">range_1007</span> <span class="o">=</span> <span class="mi">30</span> <span class="mi">1600</span>
 
-gain_1008 = 23
-ppm_1008 = 0
-offset_1008 = 0
-range_1008 = 30 1600
+<span class="n">gain_1008</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">ppm_1008</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">offset_1008</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">range_1008</span> <span class="o">=</span> <span class="mi">30</span> <span class="mi">1600</span>
 
-[hackrfdevs]
-hackrf_path = /usr/local/bin
-lna_gain = 32
-vga_gain = 40</pre>
+<span class="p">[</span><span class="n">hackrfdevs</span><span class="p">]</span>
+<span class="n">hackrf_path</span> <span class="o">=</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span>
+<span class="n">lna_gain</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">vga_gain</span> <span class="o">=</span> <span class="mi">40</span>
+</pre></div>
 </div>
 <div class="section" id="configuration-sections">
 <h3>Configuration Sections<a class="headerlink" href="#configuration-sections" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ol class="arabic">
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">[modules]</span></tt></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">[modules]</span></code></dt>
 <dd><p class="first last">This section contains a single setting, <em>modules</em>, which is the
-list of modules to be loaded by the client.  It&#8217;s alright
-to leave this alone, even if you don&#8217;t plan on using every module.</p>
+list of modules to be loaded by the client.  It’s alright
+to leave this alone, even if you don’t plan on using every module.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">[connector]</span></tt></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">[connector]</span></code></dt>
 <dd><p class="first last">This section contains information about the station and server.  The station ID
 and password must have already been registered with the server.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">[startup]</span></tt></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">[startup]</span></code></dt>
 <dd><p class="first">Modules can be loaded at client start using this section. The format of entries is:</p>
-<p><tt class="docutils literal"><span class="pre">startup_{device}</span> <span class="pre">=</span> <span class="pre">{module}</span> <span class="pre">{parameters}</span></tt></p>
+<p><code class="docutils literal notranslate"><span class="pre">startup_{device}</span> <span class="pre">=</span> <span class="pre">{module}</span> <span class="pre">{parameters}</span></code></p>
 <p>Device numbers 9000+ are for pseudo-devices (currently only <cite>p25rx</cite>).  If the device
 number is instead the string <cite>virtual</cite>, the module will be assigned to the HackRF,
 if one is present.  Only particular modules are able to run on the HackRF.</p>
@@ -153,24 +140,24 @@ if one is present.  Only particular modules are able to run on the HackRF.</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">[location]</span></tt></dt>
-<dd><p class="first last">If <tt class="docutils literal"><span class="pre">usegps</span></tt> is set to 0, the <tt class="docutils literal"><span class="pre">lat</span></tt> and <tt class="docutils literal"><span class="pre">lng</span></tt> settings will be used to determine node
-position.  The coordinates should be in decimal degrees.  If <tt class="docutils literal"><span class="pre">usegps</span></tt> is 1, then gpsd
-on the local system will be used to determine the node&#8217;s location.  You will want to use GPS
+<dt><code class="docutils literal notranslate"><span class="pre">[location]</span></code></dt>
+<dd><p class="first last">If <code class="docutils literal notranslate"><span class="pre">usegps</span></code> is set to 0, the <code class="docutils literal notranslate"><span class="pre">lat</span></code> and <code class="docutils literal notranslate"><span class="pre">lng</span></code> settings will be used to determine node
+position.  The coordinates should be in decimal degrees.  If <code class="docutils literal notranslate"><span class="pre">usegps</span></code> is 1, then gpsd
+on the local system will be used to determine the node’s location.  You will want to use GPS
 if your node moves around.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">[scanner]</span></tt></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">[scanner]</span></code></dt>
 <dd><p class="first last">This section holds scanner module settings.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">[rtldevs]</span></tt></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">[rtldevs]</span></code></dt>
 <dd><p class="first last">The <em>rtl_path</em> setting tells the client where the RTL-SDR tools,
-(such as <tt class="docutils literal"><span class="pre">rtl_power</span></tt>) are installed.  <em>gain_{device}</em> defines the
+(such as <code class="docutils literal notranslate"><span class="pre">rtl_power</span></code>) are installed.  <em>gain_{device}</em> defines the
 gain of device <em>X</em>.  <em>ppm_{device}</em> defines the ppm (error) value for
 device <em>X</em>.  <em>offset_{device}</em> assigns a frequency offset (in MHz)to
 the device.  You might set the offset when using an upconverter.
@@ -180,11 +167,10 @@ supports, minimum and maximum in MHz.</p>
 </dl>
 </li>
 </ol>
-<ol class="arabic" start="10">
+<ol class="arabic simple" start="10">
 <li><dl class="first docutils">
-<dt><tt class="docutils literal"><span class="pre">[hackrfdevs]</span></tt></dt>
-<dd><p class="first last">Binary path and gain information for HackRF devices.</p>
-</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">[hackrfdevs]</span></code></dt>
+<dd>Binary path and gain information for HackRF devices.</dd>
 </dl>
 </li>
 </ol>
@@ -196,68 +182,68 @@ supports, minimum and maximum in MHz.</p>
 <p>The client will identify RTL-SDR devices and HackRF.  The client can use many
 RTL-SDRs, but only the first HackRF.  Once initialization is complete, you
 will be presented with a prompt.  You can use the below commands.  Lines that
-start with a <tt class="docutils literal"><span class="pre">#</span></tt> are ignored.  Tab completion is available.</p>
+start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> are ignored.  Tab completion is available.</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="docutils literal"><span class="pre">devs</span></tt>: Show loaded devices and running modules.  Time is UTC</li>
-<li><tt class="docutils literal"><span class="pre">help</span></tt>: Show available commands</li>
-<li><tt class="docutils literal"><span class="pre">interesting_add</span></tt>: Add an entry to the station&#8217;s &#8216;interesting&#8217; list</li>
-<li><tt class="docutils literal"><span class="pre">interesting_del</span></tt>: Remove an entry from the station&#8217;s &#8216;interesting&#8217; list</li>
-<li><tt class="docutils literal"><span class="pre">interesting</span></tt>: Show the station&#8217;s current &#8216;interesting&#8217; list</li>
-<li><tt class="docutils literal"><span class="pre">location</span></tt>: Show the location the client currently thinks it is at</li>
-<li><tt class="docutils literal"><span class="pre">message</span></tt>: Send a messager to another node.  If the node is not logged
+<li><code class="docutils literal notranslate"><span class="pre">devs</span></code>: Show loaded devices and running modules.  Time is UTC</li>
+<li><code class="docutils literal notranslate"><span class="pre">help</span></code>: Show available commands</li>
+<li><code class="docutils literal notranslate"><span class="pre">interesting_add</span></code>: Add an entry to the station’s ‘interesting’ list</li>
+<li><code class="docutils literal notranslate"><span class="pre">interesting_del</span></code>: Remove an entry from the station’s ‘interesting’ list</li>
+<li><code class="docutils literal notranslate"><span class="pre">interesting</span></code>: Show the station’s current ‘interesting’ list</li>
+<li><code class="docutils literal notranslate"><span class="pre">location</span></code>: Show the location the client currently thinks it is at</li>
+<li><code class="docutils literal notranslate"><span class="pre">message</span></code>: Send a messager to another node.  If the node is not logged
 in when the message is sent, the message will be retrieved when it logs
-in.  <tt class="docutils literal"><span class="pre">&gt;</span> <span class="pre">message</span> <span class="pre">[target]</span> <span class="pre">[message]</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">mods</span></tt>: List available modules and show their usage information</li>
-<li><tt class="docutils literal"><span class="pre">now</span></tt>: Show the current date and time, according to the node (UTC)</li>
-<li><tt class="docutils literal"><span class="pre">pwr</span></tt>: Show power at a frequency (requires HackRF)</li>
-<li><tt class="docutils literal"><span class="pre">quit</span></tt>: Exit the client</li>
-<li><tt class="docutils literal"><span class="pre">remotetask</span></tt>: Request a module to be run on another node (the node must
+in.  <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">message</span> <span class="pre">[target]</span> <span class="pre">[message]</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">mods</span></code>: List available modules and show their usage information</li>
+<li><code class="docutils literal notranslate"><span class="pre">now</span></code>: Show the current date and time, according to the node (UTC)</li>
+<li><code class="docutils literal notranslate"><span class="pre">pwr</span></code>: Show power at a frequency (requires HackRF)</li>
+<li><code class="docutils literal notranslate"><span class="pre">quit</span></code>: Exit the client</li>
+<li><code class="docutils literal notranslate"><span class="pre">remotetask</span></code>: Request a module to be run on another node (the node must
 be listening for requests of this type)</li>
-<li><tt class="docutils literal"><span class="pre">reserve</span></tt>: Reserve a device</li>
-<li><tt class="docutils literal"><span class="pre">run</span></tt>: Run a module.  Module arguments can be seen in the module&#8217;s
-section in the output of the <tt class="docutils literal"><span class="pre">mods</span></tt> command</li>
-<li><tt class="docutils literal"><span class="pre">settings</span></tt>: Show / toggle a module&#8217;s settings.  Each module may have its
-own settings.  Settings are shown in the output of the <tt class="docutils literal"><span class="pre">mods</span></tt> command,
-or can be seen by typing <tt class="docutils literal"><span class="pre">settings</span> <span class="pre">{module}</span></tt>.  Settings are toggled
-by typing <tt class="docutils literal"><span class="pre">settings</span> <span class="pre">{module}</span> <span class="pre">{setting-name}</span> <span class="pre">{value}</span></tt>.  In the case
-of boolean settings, <tt class="docutils literal"><span class="pre">{value}</span></tt> is omitted</li>
-<li><tt class="docutils literal"><span class="pre">stop</span></tt>: Stop a job.  The device index is used in conjunction with this
-command, e.g. <tt class="docutils literal"><span class="pre">stop</span> <span class="pre">1</span></tt>.  The device will be available for use with
-another module (or another instance of the same module) after <tt class="docutils literal"><span class="pre">stop</span></tt>
+<li><code class="docutils literal notranslate"><span class="pre">reserve</span></code>: Reserve a device</li>
+<li><code class="docutils literal notranslate"><span class="pre">run</span></code>: Run a module.  Module arguments can be seen in the module’s
+section in the output of the <code class="docutils literal notranslate"><span class="pre">mods</span></code> command</li>
+<li><code class="docutils literal notranslate"><span class="pre">settings</span></code>: Show / toggle a module’s settings.  Each module may have its
+own settings.  Settings are shown in the output of the <code class="docutils literal notranslate"><span class="pre">mods</span></code> command,
+or can be seen by typing <code class="docutils literal notranslate"><span class="pre">settings</span> <span class="pre">{module}</span></code>.  Settings are toggled
+by typing <code class="docutils literal notranslate"><span class="pre">settings</span> <span class="pre">{module}</span> <span class="pre">{setting-name}</span> <span class="pre">{value}</span></code>.  In the case
+of boolean settings, <code class="docutils literal notranslate"><span class="pre">{value}</span></code> is omitted</li>
+<li><code class="docutils literal notranslate"><span class="pre">stop</span></code>: Stop a job.  The device index is used in conjunction with this
+command, e.g. <code class="docutils literal notranslate"><span class="pre">stop</span> <span class="pre">1</span></code>.  The device will be available for use with
+another module (or another instance of the same module) after <code class="docutils literal notranslate"><span class="pre">stop</span></code>
 has been run on it.  For modules that run on the HackRF, the device
-&#8216;numbers&#8217; are letters that are reclaimed when the module finishes running.</li>
-<li><tt class="docutils literal"><span class="pre">unreserve</span></tt>: Unreserve a device that has been reserved with the <tt class="docutils literal"><span class="pre">reserve</span></tt> command</li>
-<li><tt class="docutils literal"><span class="pre">stations</span></tt>: Show stations associated with the cluster</li>
-<li><tt class="docutils literal"><span class="pre">tdoa</span></tt>: Request stations to cooperate in a TDOA measurement</li>
+‘numbers’ are letters that are reclaimed when the module finishes running.</li>
+<li><code class="docutils literal notranslate"><span class="pre">unreserve</span></code>: Unreserve a device that has been reserved with the <code class="docutils literal notranslate"><span class="pre">reserve</span></code> command</li>
+<li><code class="docutils literal notranslate"><span class="pre">stations</span></code>: Show stations associated with the cluster</li>
+<li><code class="docutils literal notranslate"><span class="pre">tdoa</span></code>: Request stations to cooperate in a TDOA measurement</li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
-<p>A list of currently implemented modules follows.  See the output of the <tt class="docutils literal"><span class="pre">mods</span></tt>
+<p>A list of currently implemented modules follows.  See the output of the <code class="docutils literal notranslate"><span class="pre">mods</span></code>
 command for usage instructions.</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="docutils literal"><span class="pre">adsb</span></tt>:  Aircraft telemetry (ADS-B) module.  Decodes ADS-B broadcasts
+<li><code class="docutils literal notranslate"><span class="pre">adsb</span></code>:  Aircraft telemetry (ADS-B) module.  Decodes ADS-B broadcasts
 sent by aircraft.</li>
-<li><tt class="docutils literal"><span class="pre">freqwatch</span></tt>:  Report the power of each of the station&#8217;s &#8216;interesting&#8217;
+<li><code class="docutils literal notranslate"><span class="pre">freqwatch</span></code>:  Report the power of each of the station’s ‘interesting’
 frequencies periodically.</li>
-<li><tt class="docutils literal"><span class="pre">p25rx</span></tt>: A pseudo-module that doesn&#8217;t do much itself.  It accepts output
+<li><code class="docutils literal notranslate"><span class="pre">p25rx</span></code>: A pseudo-module that doesn’t do much itself.  It accepts output
 from the <a class="reference external" href="https://github.com/robotastic/trunk-recorder/">trunk-recorder</a>
-<tt class="docutils literal"><span class="pre">recorder</span></tt> command, piped over a UDP socket and sends summary information
+<code class="docutils literal notranslate"><span class="pre">recorder</span></code> command, piped over a UDP socket and sends summary information
 to the server.</li>
-<li><tt class="docutils literal"><span class="pre">remotetask</span></tt>: Accept jobs for a certain type of module from others.</li>
-<li><tt class="docutils literal"><span class="pre">scanner</span></tt>: This module receives a list of &#8220;interesting&#8221; frequencies for
+<li><code class="docutils literal notranslate"><span class="pre">remotetask</span></code>: Accept jobs for a certain type of module from others.</li>
+<li><code class="docutils literal notranslate"><span class="pre">scanner</span></code>: This module receives a list of “interesting” frequencies for
 your node from the server, and monitors their signal levels.  It behaves sort
 of like a handheld radio scanner - it will report frequencies that exceed the
 squelch (a configurable level above the average at that frequency.)  Be
-careful adjusting this module&#8217;s <tt class="docutils literal"><span class="pre">hit_db</span></tt> parameter.  If it&#8217;s too low, noise
+careful adjusting this module’s <code class="docutils literal notranslate"><span class="pre">hit_db</span></code> parameter.  If it’s too low, noise
 will trigger false hits.  Particularly noisy frequencies may do that, anyway.</li>
-<li><tt class="docutils literal"><span class="pre">single</span></tt>: Monitor a single frequency for power above a specified threshold</li>
-<li><tt class="docutils literal"><span class="pre">snapshot</span></tt>: Take a picture of a swath of the RF spectrum and send it to
+<li><code class="docutils literal notranslate"><span class="pre">single</span></code>: Monitor a single frequency for power above a specified threshold</li>
+<li><code class="docutils literal notranslate"><span class="pre">snapshot</span></code>: Take a picture of a swath of the RF spectrum and send it to
 the server.</li>
-<li><tt class="docutils literal"><span class="pre">ism433</span></tt>: Collect and send ISM433 (such as Tire Pressure Monitoring System
+<li><code class="docutils literal notranslate"><span class="pre">ism433</span></code>: Collect and send ISM433 (such as Tire Pressure Monitoring System
 (TPMS) information)</li>
 </ul>
 </div></blockquote>
@@ -278,7 +264,7 @@ Keep your antenna(s) by the window.</p>
 </div>
 <div class="section" id="gps">
 <h3>GPS<a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h3>
-<p><tt class="docutils literal"><span class="pre">gpsd</span></tt> needs to be running and listening on localhost for GPS to work.
+<p><code class="docutils literal notranslate"><span class="pre">gpsd</span></code> needs to be running and listening on localhost for GPS to work.
 If you have problems with GPS, see
 <a class="reference external" href="http://www.catb.org/gpsd/installation.html">this page</a>.</p>
 </div>
@@ -327,11 +313,11 @@ are plentiful.  Here are some tips for picking the right stuff.</p>
 <ul class="simple">
 <li>The metal-cased RTL-USB sticks work pretty well.  Look for something with
 a low PPM.</li>
-<li>It&#8217;s critical to have the right antenna for the job.  If you are scanning
+<li>It’s critical to have the right antenna for the job.  If you are scanning
 different frequency bands, have antennas that suit each one.</li>
 <li>Sharing an antenna (through a splitter) results in less power being fed to
 each stick.  One antenna to two sticks, half the power.  And so on.</li>
-<li>If you keep your antenna next to a window, you&#8217;ll see a big increase in power
+<li>If you keep your antenna next to a window, you’ll see a big increase in power
 over keeping it far from a window.  If you keep it outside the window, even
 on the outside ledge, you may see a much larger increase.</li>
 <li>For ADS-B, get one of the RTL-SDR dongles specifically made for this (you
@@ -349,7 +335,7 @@ powered.</li>
 
 
       </div>
-      <div class="bottomnav">
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
         «&#160;&#160;<a href="index.html">Distributed Radio Signal Collection and Analysis</a>
@@ -361,9 +347,9 @@ powered.</li>
 
       </div>
 
-    <div class="footer">
-        &copy; Copyright 2018, ΓRF.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, ΓRF.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
     </div>
   </body>
 </html>
