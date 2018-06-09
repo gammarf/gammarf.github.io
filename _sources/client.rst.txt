@@ -3,8 +3,17 @@ Client
 
 This covers the open-source client.
 
-.. image:: _static/images/client.png
-    :scale: 70 %
+ .. figure:: _static/images/client.jpg
+
+    ΓRF client software
+
+ .. figure:: _static/images/array.jpg
+
+    hi
+
+ .. figure:: _static/images/node.jpg
+
+    hi
 
 
 Installation

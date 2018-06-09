@@ -43,7 +43,7 @@ The server collects and stores data from clients, and provides an elegant web in
 
 .. figure:: _static/images/srv_snapshot.jpg
 
-    A 'snapshot', or view of a spectrum slice as seen by a client
+    A 'snapshot' view of a spectrum slice as seen by a client
 
 .. figure:: _static/images/srv_adsb_detail.jpg
 
