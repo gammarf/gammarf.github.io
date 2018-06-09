@@ -9,9 +9,9 @@ This covers the open-source client.
 
  .. figure:: _static/images/array.jpg
 
-    hi
+    An array of RTL-SDR SDRs, used by a client
 
- .. figure:: _static/images/node.jpg
+ .. figure:: _static/images/node2.jpg
 
     hi
 
