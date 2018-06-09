@@ -13,6 +13,10 @@ Data collected by nodes is stored on a server and combined into coherent
 products.  These products are accessible through a web interface, in visually
 appealing, easy-to-use form.
 
+.. figure:: _static/images/srv_landing.jpg
+
+    Server landing page
+
 Applications
 ============
 Some examples of what has been implemented, or may be easily implemented,
