@@ -47,7 +47,7 @@ products.  These products are accessible through a web interface, in visually
 appealing, easy-to-use form.</p>
 <div class="figure" id="id1">
 <img alt="_images/srv_landing.jpg" src="_images/srv_landing.jpg" />
-<p class="caption"><span class="caption-text">Server landing page</span></p>
+<p class="caption"><span class="caption-text">Web interface, landing page</span></p>
 </div>
 </div>
 <div class="section" id="applications">
@@ -56,11 +56,11 @@ appealing, easy-to-use form.</p>
 using the system include:</p>
 <blockquote>
 <div><ul class="simple">
-<li>tracking satellites and other space objects</li>
-<li>estimating the location of transmitters using TDOA</li>
-<li>building direction finding networks (e.g. for fox hunts)</li>
-<li>channel location and identification</li>
-<li>creating timelines of activity on a radio channel</li>
+<li>Monitoring ham radio activity on repeaters in a city</li>
+<li>Distributed tracking of satellites</li>
+<li>Building direction finding networks (e.g. for fox hunts)</li>
+<li>Spectrum enumeration (finding channels and guessing modulation) [under development]</li>
+<li>Creating timelines of emergency services activity in an area</li>
 </ul>
 </div></blockquote>
 </div>
@@ -69,36 +69,20 @@ using the system include:</p>
 <p>There is an open-source client available <a class="reference external" href="https://github.com/gammarf/gammarf">here</a>.
 We cover installation and usage of this client later in this documentation.</p>
 <div class="figure" id="id2">
-<a class="reference internal image-reference" href="_static/images/client.png"><img alt="_static/images/client.png" src="_static/images/client.png" /></a>
+<img alt="_images/client.jpg" src="_images/client.jpg" />
 <p class="caption"><span class="caption-text">ΓRF client software</span></p>
 </div>
 </div>
 <div class="section" id="server">
 <h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
-<p>The server is composed of both open-source and proprietary software.</p>
+<p>The server collects and stores data from clients, and provides an elegant web interface for analysis of this data.</p>
 <div class="figure" id="id3">
-<a class="reference internal image-reference" href="_static/images/activity3.png"><img alt="_static/images/activity3.png" src="_static/images/activity3.png" /></a>
-<p class="caption"><span class="caption-text">Ham radio repeater activity.  Dense clusters of dots are conversations.  Graphed with <a class="reference external" href="https://grafana.com/">Grafana</a>.</span></p>
+<img alt="_images/srv_snapshot.jpg" src="_images/srv_snapshot.jpg" />
+<p class="caption"><span class="caption-text">A ‘snapshot’, or view of a spectrum slice as seen by a client</span></p>
 </div>
 <div class="figure" id="id4">
-<a class="reference internal image-reference" href="_static/images/activity1.png"><img alt="_static/images/activity1.png" src="_static/images/activity1.png" /></a>
-<p class="caption"><span class="caption-text">Signal strength at a frequency, graphed over time.</span></p>
-</div>
-<div class="figure" id="id5">
-<a class="reference internal image-reference" href="_static/images/tpms.png"><img alt="_static/images/tpms.png" src="_static/images/tpms.png" /></a>
-<p class="caption"><span class="caption-text">Car activity in the node’s local area (as determined by <a class="reference external" href="https://en.wikipedia.org/wiki/Tire-pressure_monitoring_system">TPMS</a> signals)</span></p>
-</div>
-<div class="figure" id="id6">
-<a class="reference internal image-reference" href="_static/images/servermap.png"><img alt="_static/images/servermap.png" src="_static/images/servermap.png" /></a>
-<p class="caption"><span class="caption-text">A cluster of nodes are mapped, along with cluster reference transmitters.</span></p>
-</div>
-<div class="figure" id="id7">
-<a class="reference internal image-reference" href="_static/images/server_interesting.png"><img alt="_static/images/server_interesting.png" src="_static/images/server_interesting.png" /></a>
-<p class="caption"><span class="caption-text">Each node has its own set of ‘interesting frequencies’ it can monitor.</span></p>
-</div>
-<div class="figure" id="id8">
-<a class="reference internal image-reference" href="_static/images/server_snapshot.png"><img alt="_static/images/server_snapshot.png" src="_static/images/server_snapshot.png" /></a>
-<p class="caption"><span class="caption-text">The ‘snapshot’ client module takes a picture of a swath of spectrum and sends it to the server.</span></p>
+<img alt="_images/srv_adsb_detail.jpg" src="_images/srv_adsb_detail.jpg" />
+<p class="caption"><span class="caption-text">Timeline of ADS-B intercepts for a particular aircraft</span></p>
 </div>
 </div>
 <div class="section" id="rf-documentation">
