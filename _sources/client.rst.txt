@@ -11,9 +11,6 @@ This covers the open-source client.
 
     An array of RTL-SDR SDRs, used by a client
 
- .. figure:: _static/images/node2.jpg
-
-    hi
 
 
 Installation
@@ -25,7 +22,7 @@ Installation
 
 3. ``./prepare; ./run.sh`` (assumes you have Docker installed)
 
-4. If you're using HackRF, flash the rom with the newest firmware version.  This is a must!
+4. If you're using a HackRF (necessary for most functionality), flash the rom with the newest firmware version.  This is a must!
 
 5. Make sure all clients are running time synchronization services (ntpd, timesyncd)!
 
