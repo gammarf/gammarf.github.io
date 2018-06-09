@@ -44,27 +44,32 @@ There are pages for each subject (client module type), which list unique identif
 server databases.  Below are a few examples.
 
 .. figure:: _static/images/srv_interesting.jpg
-    :width: 80%
+    :align: center
+    :width: 70%
 
     'Interesting' entries for a client.  Interesting frequencies are those that the client is configured to watch
 
 .. figure:: _static/images/srv_adsb.jpg
-    :width: 80%
+    :align: center
+    :width: 70%
 
     ADS-B entries for a client
 
 .. figure:: _static/images/srv_ism433.jpg
-    :width: 80%
+    :align: center
+    :width: 70%
 
     ISM433 (e.g. TPMS) entries
 
 .. figure:: _static/images/srv_p25.jpg
-    :width: 80%
+    :align: center
+    :width: 70%
 
     P25 (digital trunking) entries for a client
 
 .. figure:: _static/images/srv_adsb.jpg
-    :width: 80%
+    :align: center
+    :width: 70%
 
     ADS-B entries for a client
 
