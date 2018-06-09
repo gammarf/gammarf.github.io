@@ -14,6 +14,7 @@ products.  These products are accessible through a web interface, in visually
 appealing, easy-to-use form.
 
 .. figure:: _static/images/srv_landing.jpg
+    :align: center
 
     Web interface, landing page
 
@@ -34,6 +35,8 @@ There is an open-source client available `here <https://github.com/gammarf/gamma
 We cover installation and usage of this client later in this documentation.
 
 .. figure:: _static/images/client.jpg
+    :align: center
+    :width: 70%
 
     ΓRF client software
 
@@ -42,10 +45,14 @@ Server
 The server collects and stores data from clients, and provides an elegant web interface for analysis of this data.
 
 .. figure:: _static/images/srv_snapshot.jpg
+    :align: center
+    :width: 70%
 
     A 'snapshot' view of a spectrum slice as seen by a client
 
 .. figure:: _static/images/srv_adsb_detail.jpg
+    :align: center
+    :width: 70%
 
     Timeline of ADS-B intercepts for a particular aircraft
 

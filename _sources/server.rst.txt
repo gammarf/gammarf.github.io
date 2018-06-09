@@ -76,10 +76,12 @@ Grafana
 `Grafana <https://grafana.com/>`_ is installed on the server and gives the user fine-grained access to the time series.
 
 .. figure:: _static/images/grafana_ham.jpg
+    :align: center
 
     Grafana representation of time series for ham radio frequencies
 
 .. figure:: _static/images/grafana_air.jpg
+    :align: center
 
     Grafana representation of time series for aircraft
 
