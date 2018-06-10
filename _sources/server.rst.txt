@@ -3,7 +3,7 @@ Server
 
 This section covers basic server structure and usage from a consumer standpoint.  Server source is
 not yet open.  However the server is free to use and anyone can create their own clusters.  One can
-log into the server (https://gammarf.io:8080) with user and pass 'grfdemo' for a tour.
+log into the kcgrf server (https://kcgrf.gammarf.io) with user and pass 'grfdemo' for a tour.
 
 
 Organization
@@ -12,8 +12,8 @@ Organization
 A server may host many *clusters*.  Clusters are groupings of stations.  There may be a different cluster per city, for example.
 
 Clusters are composed of *stations*.  A station is identified by a *stationid* which is unique to both the cluster and the server.
-Because a stationid is unique to the server, users in different clusters can message each other, request remotetasks from one
-another, across cluster boundaries.
+Because a stationid is unique to the server, users in different clusters can message each other and request remotetasks from one
+another across cluster boundaries.
 
 Web Interface
 =============
@@ -40,13 +40,19 @@ server databases.  Below are a few examples.
     :align: center
     :width: 70%
 
+.. centered:: ---
+
 .. figure:: _static/images/srv_ism433.jpg
     :align: center
     :width: 70%
 
+.. centered:: ---
+
 .. figure:: _static/images/srv_p25.jpg
     :align: center
     :width: 70%
+
+.. centered:: ---
 
 .. figure:: _static/images/srv_adsb.jpg
     :align: center
