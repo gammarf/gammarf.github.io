@@ -40,19 +40,16 @@ server databases.  Below are a few examples.
     :align: center
     :width: 70%
 
-.. centered:: ---
 
 .. figure:: _static/images/srv_ism433.jpg
     :align: center
     :width: 70%
 
-.. centered:: ---
 
 .. figure:: _static/images/srv_p25.jpg
     :align: center
     :width: 70%
 
-.. centered:: ---
 
 .. figure:: _static/images/srv_adsb.jpg
     :align: center
