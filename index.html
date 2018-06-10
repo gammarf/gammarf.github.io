@@ -35,16 +35,16 @@
         
   <div class="section" id="distributed-radio-signal-collection-and-analysis">
 <h1>Distributed Radio Signal Collection and Analysis<a class="headerlink" href="#distributed-radio-signal-collection-and-analysis" title="Permalink to this headline">¶</a></h1>
-<p>ΓRF is a radio signal collection, storage, and analysis system based on
-inexpensive distributed nodes and a central server.</p>
-<p>Nodes run modules which provide various types of functionality,
-such as monitoring specific frequencies, watching for activity on frequencies,
-and monitoring aircraft in the area through their ADS-B traffic.  Nodes are
-based on inexpensive hardware (such as the HackRF, Intel NUC, and RTL-SDR),
-so the system is accessible to both professional and hobby users.</p>
-<p>Data collected by nodes is stored on a server and combined into coherent
-products.  These products are accessible through a web interface, in visually
-appealing, easy-to-use form.</p>
+<p>ΓRF is a radio signal collection, storage, and analysis system based on inexpensive
+distributed nodes and a central server.</p>
+<p>Nodes run modules which provide various types of functionality, such as monitoring
+the power on a set of frequencies, watching for ‘hits’ on frequencies, monitoring
+aircraft activity (through their ADS-B traffic), and more.  Nodes can be distributed
+geographically and their data combined for hybrid analysis.</p>
+<p>Nodes are based on inexpensive hardware such as Intel NUCs, Raspberry Pis, RTL-SDR
+USB radios, and the HackRF, so ΓRF is accessible to both professional and hobby users.</p>
+<p>Data collected by nodes is stored on a server and used to form visualizations and other
+analysis products.</p>
 <div class="figure align-center" id="id1">
 <img alt="_images/srv_landing.jpg" src="_images/srv_landing.jpg" />
 <p class="caption"><span class="caption-text">Web interface, landing page</span></p>
@@ -57,10 +57,10 @@ using the system include:</p>
 <blockquote>
 <div><ul class="simple">
 <li>Monitoring ham radio activity on repeaters in a city</li>
+<li>Creating timelines of emergency services activity in an area</li>
 <li>Distributed tracking of satellites</li>
 <li>Building direction finding networks (e.g. for fox hunts)</li>
 <li>Spectrum enumeration (finding channels and guessing modulation) [under development]</li>
-<li>Creating timelines of emergency services activity in an area</li>
 </ul>
 </div></blockquote>
 </div>
@@ -82,7 +82,7 @@ We cover installation and usage of this client later in this documentation.</p>
 </div>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="_images/srv_adsb_detail.jpg"><img alt="_images/srv_adsb_detail.jpg" src="_images/srv_adsb_detail.jpg" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">Timeline of ADS-B intercepts for a particular aircraft</span></p>
+<p class="caption"><span class="caption-text">Timeline of hits (activity) for a frequency of interest</span></p>
 </div>
 </div>
 <div class="section" id="rf-documentation">
