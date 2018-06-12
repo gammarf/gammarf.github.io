@@ -273,9 +273,14 @@ Keep your antenna(s) by the window.</p>
 </div>
 <div class="section" id="gps">
 <h3>GPS<a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">gpsd</span></code> needs to be running and listening on localhost for GPS to work.
-If you have problems with GPS, see
-<a class="reference external" href="http://www.catb.org/gpsd/installation.html">this page</a>.</p>
+<p>You should enable GPS in the client configuration if your node will be mobile.
+If your node will not be mobile, you can specify static coordinates in the
+configuration.  For the sake of accuracy, specify coordinates as accurately as
+possible.</p>
+<p><code class="docutils literal notranslate"><span class="pre">gpsd</span></code> needs to be running and listening on localhost for GPS to work (or, you
+can specify an external gpsd server in the configuration.)
+<a class="reference external" href="http://www.catb.org/gpsd/installation.html">This page</a> is helpful for getting
+gpsd to work.</p>
 </div>
 <div class="section" id="ports">
 <h3>Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h3>
