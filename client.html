@@ -53,8 +53,9 @@
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/gammarf/gammarf</span></code></li>
-<li>Adjust gammarf.conf.  Get <code class="docutils literal notranslate"><span class="pre">station_id</span></code> and <code class="docutils literal notranslate"><span class="pre">station_pass</span></code> from your server administrator</li>
-<li><code class="docutils literal notranslate"><span class="pre">./prepare;</span> <span class="pre">./run.sh</span></code> (assumes you have Docker installed)</li>
+<li>Adjust gammarf.conf.  Set <code class="docutils literal notranslate"><span class="pre">station_id</span></code> and <code class="docutils literal notranslate"><span class="pre">station_pass</span></code> to what you registered on the server’s signup page.</li>
+<li><code class="docutils literal notranslate"><span class="pre">./prepare;</span> <span class="pre">./run.sh</span></code>.  This assumes Docker is installed and running.  You can save CPU / memory by doing this
+without Docker, but you’ll need to install packages manually.</li>
 <li>If you’re using a HackRF (necessary for most functionality), flash the rom with the newest firmware version.  This is a must!</li>
 <li>Make sure all clients are running time synchronization services (ntpd, timesyncd)!</li>
 </ol>
