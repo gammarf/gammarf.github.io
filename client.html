@@ -39,13 +39,12 @@
   <div class="section" id="client">
 <h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><div class="figure align-center" id="id1">
+<div><p>The client software runs on the distributed nodes.  From the interface the user can start and stop jobs that utilize the radio hardware attached.  Below is an image of the client software in action, folowed by an array of RTL-SDR radios used by a client.</p>
+<div class="figure align-center">
 <img alt="_images/client.jpg" src="_images/client.jpg" />
-<p class="caption"><span class="caption-text">ΓRF client software</span></p>
 </div>
-<div class="figure align-center" id="id2">
+<div class="figure align-center">
 <img alt="_images/array.jpg" src="_images/array.jpg" />
-<p class="caption"><span class="caption-text">An array of RTL-SDR SDRs, used by a client</span></p>
 </div>
 </div></blockquote>
 <div class="section" id="installation">
@@ -194,7 +193,7 @@ supports, minimum and maximum in MHz.</p>
 <div><ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">devs</span></code>: Show loaded devices and running modules.  Time is UTC</li>
 <li><code class="docutils literal notranslate"><span class="pre">help</span></code>: Show available commands</li>
-<li><code class="docutils literal notranslate"><span class="pre">interesting_add</span></code>: Add an entry to the station’s ‘interesting’ list</li>
+<li><code class="docutils literal notranslate"><span class="pre">interesting_add</span></code>: Add an entry to the station’s ‘interesting’ list.  Be descriptive - other stations may be interested in your monitored frequencies.</li>
 <li><code class="docutils literal notranslate"><span class="pre">interesting_clone</span></code>: CLone interesting frequencies from another station</li>
 <li><code class="docutils literal notranslate"><span class="pre">interesting_del</span></code>: Remove an entry from the station’s ‘interesting’ list</li>
 <li><code class="docutils literal notranslate"><span class="pre">interesting</span></code>: Show the station’s current ‘interesting’ list</li>
@@ -204,7 +203,7 @@ in when the message is sent, the message will be retrieved when it logs
 in.  <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">message</span> <span class="pre">[target]</span> <span class="pre">[message]</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">mods</span></code>: List available modules and show their usage information</li>
 <li><code class="docutils literal notranslate"><span class="pre">now</span></code>: Show the current date and time, according to the node (UTC)</li>
-<li><code class="docutils literal notranslate"><span class="pre">p25_add</span></code>: Add an entry to the station’s list of p25 talkgroups</li>
+<li><code class="docutils literal notranslate"><span class="pre">p25_add</span></code>: Add an entry to the station’s list of p25 talkgroups.  Be descriptive - other stations may be interested in your talkgroups.</li>
 <li><code class="docutils literal notranslate"><span class="pre">p25_del</span></code>: Remove an entry from the station’s list of p25 talkgroups</li>
 <li><code class="docutils literal notranslate"><span class="pre">p25</span></code>: Show the station’s current list of p25 talkgroups</li>
 <li><code class="docutils literal notranslate"><span class="pre">pwr</span></code>: Show power at a frequency (requires HackRF)</li>
