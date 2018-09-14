@@ -37,11 +37,11 @@ The server collects, stores, and correlates data from clients, and provides an e
     :width: 70%
 
 
-.. figure:: _static/images/srv_repeater.jpg
+.. figure:: _static/images/srv_repeater.png
     :align: center
     :width: 70%
 
-.. figure:: _static/images/srv_repeaters.jpg
+.. figure:: _static/images/srv_repeaters.png
     :align: center
     :width: 70%
 
