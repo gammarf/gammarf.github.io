@@ -33,22 +33,22 @@ Subject Pages
 There are pages for each subject (client module type), which list unique identifiers (such as frequency) that appear in the
 server databases.  Subject pages are where you access the information sent by the clients, and information derived from client measurements by the server.  Below are a few examples.
 
-.. figure:: _static/images/srv_interesting.jpg
+.. figure:: _static/images/srv_interesting.png
     :align: center
     :width: 70%
 
 
-.. figure:: _static/images/srv_ism433.jpg
+.. figure:: _static/images/srv_ism433.png
     :align: center
     :width: 70%
 
 
-.. figure:: _static/images/srv_p25.jpg
+.. figure:: _static/images/srv_p25.png
     :align: center
     :width: 70%
 
 
-.. figure:: _static/images/srv_adsb.jpg
+.. figure:: _static/images/srv_adsb.png
     :align: center
     :width: 70%
 
