@@ -40,7 +40,7 @@
 <h1>Protocol<a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="client-server">
 <h2>Client / Server<a class="headerlink" href="#client-server" title="Permalink to this headline">¶</a></h2>
-<p>While there is an “official” client, in reality data can be sent to the server by whatever mechanism you wish, as long as it adheres to the protocol below.  Each module sends its data as JSON, through a TCP socket.</p>
+<p>While there is an “official” client, in reality data can be sent to the server by whatever mechanism you wish, as long as it adheres to the protocol below.  Each module sends its data as JSON, through a ZMQ socket.  See the client source for details.</p>
 <p><strong>adsb</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
     &quot;icao&quot;: string,
