@@ -40,77 +40,133 @@
 <h1>Protocol<a class="headerlink" href="#protocol" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="client-server">
 <h2>Client / Server<a class="headerlink" href="#client-server" title="Permalink to this headline">¶</a></h2>
-<p>While there is an “official” client, in reality data can be sent to the server
-by whatever mechanism you wish, as long as it adheres to the protocol below.
-Each module sends its data as JSON, through a TCP socket.</p>
-<p><strong>scanner</strong></p>
+<p>While there is an “official” client, in reality data can be sent to the server by whatever mechanism you wish, as long as it adheres to the protocol below.  Each module sends its data as JSON, through a TCP socket.</p>
+<p><strong>adsb</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-    &quot;lat&quot;: float,
-    &quot;lng&quot;: float,
-    &quot;freq&quot;: int,
-    &quot;pwr&quot;: float,
-    &quot;rand&quot;: str,
-    &quot;protocol&quot;: 1,
-    &quot;stationid&quot;: str,
-    &quot;module&quot;: 1,
+    &quot;icao&quot;: string,
+    &quot;callsign&quot;: string,
+    &quot;aircraft_lat&quot;: string,
+    &quot;aircraft_lng&quot;: string,
+    &quot;altitude&quot;: string,
+    &quot;heading&quot;: string,
+    &quot;updownrate&quot;: string,
+    &quot;speedtype&quot;: string,
+    &quot;speed&quot;: string,
+    &quot;stationid&quot;: string,
+    &quot;dt&quot;: int,
+    &quot;lat&quot;: string,
+    &quot;lng&quot;: string,
+    &quot;protocol&quot;: int,
+    &quot;module&quot;: int,
+    &quot;rand&quot;: string,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+<p><strong>channels</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;center&quot;: int,
+    &quot;bw&quot;: int,
+    &quot;pwr&quot;: string,
+    &quot;stationid&quot;: string,
+    &quot;dt&quot;: int,
+    &quot;lat&quot;: string,
+    &quot;lng&quot;: string,
+    &quot;protocol&quot;: int,
+    &quot;module&quot;: int,
+    &quot;rand&quot;: string,
     &quot;sign&quot;: [md5(station_pass + rand)]
 }
 </pre></div>
 </div>
 <p><strong>freqwatch</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-    &quot;lat&quot;: float,
-    &quot;lng&quot;: float,
     &quot;freq&quot;: int,
     &quot;pwr&quot;: float,
-    &quot;rand&quot;: str,
-    &quot;ts&quot;: str,
-    &quot;protocol&quot;: 1,
-    &quot;stationid&quot;: str,
-    &quot;module&quot;: 6,
+    &quot;stationid&quot;: string,
+    &quot;dt&quot;: int,
+    &quot;lat&quot;: string,
+    &quot;lng&quot;: string,
+    &quot;protocol&quot;: int,
+    &quot;module&quot;: int,
+    &quot;rand&quot;: string,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+<p><strong>ism433</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;model&quot;: string,
+    &quot;type&quot;: string,
+    &quot;id&quot;: int,
+    &quot;stationid&quot;: string,
+    &quot;dt&quot;: int,
+    &quot;lat&quot;: string,
+    &quot;lng&quot;: string,
+    &quot;protocol&quot;: int,
+    &quot;module&quot;: int,
+    &quot;rand&quot;: string,
     &quot;sign&quot;: [md5(station_pass + rand)]
 }
 </pre></div>
 </div>
 <p><strong>p25rx</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-    &quot;talkgroup&quot;: str,
-    &quot;lat&quot;: float,
-    &quot;lng&quot;: float,
-    &quot;rand&quot;: str,
-    &quot;protocol&quot;: 1,
-    &quot;stationid&quot;: str,
-    &quot;module&quot;: 4,
+    &quot;talkgroup&quot;: string,
+    &quot;stationid&quot;: string,
+    &quot;dt&quot;: int,
+    &quot;lat&quot;: string,
+    &quot;lng&quot;: string,
+    &quot;protocol&quot;: int,
+    &quot;module&quot;: int,
+    &quot;rand&quot;: string,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+<p><strong>scanner</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;freq&quot;: int,
+    &quot;pwr&quot;: float,
+    &quot;stationid&quot;: string,
+    &quot;dt&quot;: int,
+    &quot;lat&quot;: string,
+    &quot;lng&quot;: string,
+    &quot;protocol&quot;: int,
+    &quot;module&quot;: int,
+    &quot;rand&quot;: string,
+    &quot;sign&quot;: [md5(station_pass + rand)]
+}
+</pre></div>
+</div>
+<p><strong>single</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;freq&quot;: int,
+    &quot;thresh&quot;: float,
+    &quot;pwr&quot;: float,
+    &quot;stationid&quot;: string,
+    &quot;dt&quot;: int,
+    &quot;lat&quot;: string,
+    &quot;lng&quot;: string,
+    &quot;protocol&quot;: int,
+    &quot;module&quot;: int,
+    &quot;rand&quot;: string,
     &quot;sign&quot;: [md5(station_pass + rand)]
 }
 </pre></div>
 </div>
 <p><strong>snapshot</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-    &quot;lat&quot;: float,
-    &quot;lng&quot;: float,
-    &quot;snapshotid&quot;: str,
-    &quot;rawdata&quot;: str,
-    &quot;type&quot;: str,
-    &quot;rand&quot;: str,
-    &quot;protocol&quot;: 1,
-    &quot;stationid&quot;: str,
-    &quot;module&quot;: 5,
-    &quot;sign&quot;: [md5(station_pass + rand)]
-}
-</pre></div>
-</div>
-<p><strong>spectrum</strong></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-    &quot;lat&quot;: float,
-    &quot;lng&quot;: float,
+    &quot;snapshotid&quot;: string,
     &quot;freq&quot;: int,
-    &quot;mean&quot;: str,
-    &quot;stdev&quot;: str,
-    &quot;range&quot;: str,
-    &quot;protocol&quot;: 1,
-    &quot;stationid&quot;: str,
-    &quot;module&quot;: 2,
+    &quot;pwr&quot;: string,
+    &quot;stationid&quot;: string,
+    &quot;dt&quot;: int,
+    &quot;lat&quot;: string,
+    &quot;lng&quot;: string,
+    &quot;protocol&quot;: int,
+    &quot;module&quot;: int,
+    &quot;rand&quot;: string,
     &quot;sign&quot;: [md5(station_pass + rand)]
 }
 </pre></div>
