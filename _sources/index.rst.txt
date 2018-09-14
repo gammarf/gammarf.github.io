@@ -36,6 +36,8 @@ The server collects, stores, and correlates data from clients, and provides an e
     :align: center
     :width: 70%
 
+|
+
 .. image:: _static/images/srv_adsb_detail.jpg
     :align: center
     :width: 70%
