@@ -30,15 +30,18 @@ The client interface is text-based, as shown in the below image.  We cover insta
 
 Server
 ======
-The server collects, stores, and correlates data from clients, and provides an elegant web interface for analysis of its data.  The below images show a 'snapshot' of a frequency band, as seen by station 'kcgrf1', and kcgrf1's activity log for one of its frequencies of interest (a ham radio repeater, in this case).
+The server collects, stores, and correlates data from clients, and provides an elegant web interface for analysis of its data.  In the first image below, we see a 'snapshot' of a frequency band (frequency vs. power), for station kcgrf1.  Below that we see the same station's activity log for one of its frequencies of interest, a ham radio repeater in this case.  The last image is a combined graph showing the station's log of hits for all repeater frequencies that it is monitoring.
 
-.. image:: _static/images/srv_snapshot.jpg
+.. figure:: _static/images/srv_snapshot.jpg
     :align: center
     :width: 70%
 
-|
 
-.. image:: _static/images/srv_adsb_detail.jpg
+.. figure:: _static/images/srv_repeater.jpg
+    :align: center
+    :width: 70%
+
+.. figure:: _static/images/srv_repeaters.jpg
     :align: center
     :width: 70%
 
