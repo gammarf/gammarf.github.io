@@ -38,14 +38,13 @@
         
   <div class="section" id="client">
 <h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
-<p>This covers the open-source client.</p>
 <blockquote>
 <div><div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="_images/client.jpg"><img alt="_images/client.jpg" src="_images/client.jpg" style="width: 70%;" /></a>
+<img alt="_images/client.jpg" src="_images/client.jpg" />
 <p class="caption"><span class="caption-text">ΓRF client software</span></p>
 </div>
 <div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="_images/array.jpg"><img alt="_images/array.jpg" src="_images/array.jpg" style="width: 70%;" /></a>
+<img alt="_images/array.jpg" src="_images/array.jpg" />
 <p class="caption"><span class="caption-text">An array of RTL-SDR SDRs, used by a client</span></p>
 </div>
 </div></blockquote>
@@ -56,8 +55,8 @@
 <li>Adjust gammarf.conf.  Set <code class="docutils literal notranslate"><span class="pre">station_id</span></code> and <code class="docutils literal notranslate"><span class="pre">station_pass</span></code> to what you registered on the server’s signup page.</li>
 <li><code class="docutils literal notranslate"><span class="pre">./prepare;</span> <span class="pre">./run.sh</span></code>.  This assumes Docker is installed and running.  You can save CPU / memory by doing this
 without Docker, but you’ll need to install packages manually.</li>
-<li>If you’re using a HackRF (necessary for most functionality), flash the rom with the newest firmware version.  This is a must!</li>
-<li>Make sure all clients are running time synchronization services (ntpd, timesyncd)!</li>
+<li>If you’re using a HackRF (necessary for most functionality), flash the rom with the newest firmware version, and use the latest libraries.  This is a must!</li>
+<li>Make sure all clients are running time synchronization services (ntpd, timesyncd)</li>
 </ol>
 </div>
 <div class="section" id="configuration">
@@ -190,10 +189,7 @@ supports, minimum and maximum in MHz.</p>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>The client will identify RTL-SDR devices and HackRF.  The client can use many
-RTL-SDRs, but only the first HackRF.  Once initialization is complete, you
-will be presented with a prompt.  You can use the below commands.  Lines that
-start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> are ignored.  Tab completion is available.</p>
+<p>The client will identify any available RTL-SDR devices, and the first HackRF.  You will be presented with a prompt.  Use the below command reference to get started (tab completion is available).</p>
 <blockquote>
 <div><ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">devs</span></code>: Show loaded devices and running modules.  Time is UTC</li>
@@ -270,7 +266,7 @@ the server.</li>
 <p>Use a maximum of four sticks per USB <em>controller</em>.  A controller is not
 the same thing as a port.  If you start having problems with device errors,
 segfaults, or other weird errors, try using less devices per controller.
-Give the HackRF its own dedicated USB 3.x controller.</p>
+Give the HackRF its own dedicated USB controller.</p>
 </div>
 <div class="section" id="noise">
 <h3>Noise<a class="headerlink" href="#noise" title="Permalink to this headline">¶</a></h3>
